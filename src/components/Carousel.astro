@@ -1,0 +1,15 @@
+---
+import { CarouselWrapper } from "../components/ui/CarouselWrapper";
+
+const carouselItems = [
+  { src: "../../public/img/Medicina1.png", alt: "Slide 1" },
+  { src: "../../public/img/Medicina1.png", alt: "Slide 1" },
+  { src: "../../public/img/Medicina1.png", alt: "Slide 1" }
+];
+---
+
+<div class=" max-w-xs mx-auto">
+  <div class="max-w-[1440px]">
+    <CarouselWrapper items={carouselItems} client:load />
+  </div>
+</div>

@@ -2,27 +2,35 @@
 import { Button } from "../components/ui/button";
 import Circleuser from "../icons/Circleuser.astro"
 import Shoppingcart from "../icons/shoppingcart.astro"
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuIndicator,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  NavigationMenuViewport,
-} from "@/components/ui/navigation-menu"
+import { NavigationMenuWrapper } from "../components/ui/NavigationMenuWrapper";
+
 ---
 
-<header class = "flex justify-between items-center py-6">
-	<img src = "../../public/img/Logo.png" alt = "Logo Farmasol"  />
-	<div>
-		<Button variant = "outline"><Circleuser />Admin</Button>
-		<Button variant = "outline"><Shoppingcart />0</Button>
-	</div>
-	<div>
-		<NavigationMenu ></NavigationMenu>
+<header class="flex flex-col py-6 bg-white shadow-xl shadow-orange-300">
+  <div class="max-w-[1440px] px-[150px]">
+  <div class="flex justify-between w-full">
+    <img src="../../public/img/Logo.png" alt="Logo Farmasol" />
+    <div>
+      <Button variant="outline"><Circleuser />Admin</Button>
+      <Button variant="outline"><Shoppingcart />0</Button>
+    </div>
+  </div>
+      <div class="mt-4 flex justify-between w-full"> {/* Added w-full here */}
+    <div class="flex justify-stretch">
+      <Button variant="ghost" class=" text-center">Antibióticos</Button>
+    </div>
+    <div class="flex justify-stretch">
+      <Button variant="ghost" class=" text-center">Antibióticos</Button>
+    </div>
+    <div class="flex justify-stretch">
+      <Button variant="ghost" class=" text-center">Antibióticos</Button>
+    </div>
+    <div class="flex justify-stretch">
+      <Button variant="ghost" class=" text-center">Antibióticos</Button>
+    </div>
 
-	</div>
 
+
+      </div>
+  </div>
 </header>
