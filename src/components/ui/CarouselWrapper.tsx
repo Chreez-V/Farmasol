@@ -1,4 +1,4 @@
-"use client"; // Ensure this runs on the client-side
+"use client";
 
 import * as React from "react";
 import {
@@ -9,13 +9,13 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-interface CarouselItem {
+interface CarouselItemProps {
   src: string;
   alt: string;
 }
 
 interface CarouselWrapperProps {
-  items?: CarouselItem[];
+  items?: CarouselItemProps[];
 }
 
 export function CarouselWrapper({ items = [] }: CarouselWrapperProps) {
@@ -24,20 +24,27 @@ export function CarouselWrapper({ items = [] }: CarouselWrapperProps) {
   }
 
   return (
-    <Carousel>
-      <CarouselContent>
-        {items.map((item, index) => (
-          <CarouselItem key={index}>
-            <img
-              src={item.src}
-              alt={item.alt}
-              className="rounded-lg shadow-md w-full h-auto"
-            />
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+    <div className=" relative w-full mx-auto">
+      <Carousel className="w-full" opts={{ align: "start", loop: true }}>
+        <CarouselContent className="flex gap-4">
+          {items.map((item, index) => (
+            <CarouselItem
+              key={index}
+              className="basis-3/8 md:basis-1/3 lg:basis-1/6 px-2"
+            >
+              <div className="bg-white shadow-lg rounded-lg p-4">
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full rounded-lg"
+                />
+              </div>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
+    </div>
   );
 }
